@@ -23,7 +23,7 @@ class Movie extends React.Component{
                         <h4>{this.props.movie.title}</h4>
                         </div>  
                     <img src={imgSrc+this.props.movie.poster_path}  alt=""></img>
-                    <div><i id="i-movie" className="material-icons">star_border</i></div>
+                    <div><i onClick={(e)=> this.props.favorite(this.props.movie.title)} className="material-icons">star_border</i></div>
              
                  
             

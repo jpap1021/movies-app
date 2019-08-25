@@ -12,10 +12,11 @@ class Body extends React.Component {
         error: null,
         isLoaded: false,
         movies: [],
-        
+        favoriteList :[],
+        isFavorite: true,
       };
 
-      
+     this.addFavorite = this.addFavorite.bind(this);
     }
 
  
@@ -37,8 +38,22 @@ class Body extends React.Component {
           }
         )
     }
+
+   
+
+    addFavorite(pelicula){
+         this.setState(state =>({
+            isFavorite: this.state.favoriteList.includes(pelicula),
+            favoriteList:[...state.favoriteList,pelicula],
+             }))
+          
+    }
+
+  
   
     render() {
+        console.log(this.state.isFavorite)
+        console.log(this.state.favoriteList)
       if (this.state.error) {
         return <div>Error: {this.state.error.message}</div>;
       } else if (!this.state.isLoaded) {
@@ -47,11 +62,13 @@ class Body extends React.Component {
         return (
         <div className="central">
             <div className="body-component">
-            {this.state.movies.map((movie) => {return <Movie  isFavorite={this.state.Favorite} favorites={this.addFavorites} key={movie.id} movie={movie}></Movie>})}
+            {this.state.movies.map((movie) => {return <Movie favorite={this.addFavorite} key={movie.id} movie={movie}></Movie>})}
             </div>
             
-            
-            
+            <div className="list-component">
+              <h4>List Favorites</h4>
+             <ListFavorites isfavorite={this.state.isFavorite} movie={this.state.favoriteList}></ListFavorites>
+             </div>
         </div>
         );
       }
