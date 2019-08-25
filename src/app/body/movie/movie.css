@@ -1,0 +1,12 @@
+.movie-component{
+    width:210px;
+    text-align: center;
+    margin-top:20px;
+}
+
+.title-movie{
+    display: flex;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+}

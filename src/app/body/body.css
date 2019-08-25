@@ -1,0 +1,6 @@
+.body-component{
+    width: 72%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}

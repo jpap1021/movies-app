@@ -4,7 +4,7 @@ class ListFavorites extends React.Component{
     render(){
         return(
           <div>
-              List Favorites
+              list favorites
           </div>
 
         );
