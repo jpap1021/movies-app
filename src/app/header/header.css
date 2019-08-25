@@ -1,0 +1,15 @@
+.header-component{
+ width:100%;
+ height: 60px;
+ display:flex;
+ justify-content: flex-start;
+ align-items: center;
+ background: black;
+}
+
+.header-component a{
+margin-right: 30px;
+text-decoration: none;
+color:white;
+padding-left: 30px;
+}
